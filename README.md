@@ -1,4 +1,30 @@
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Tic Tac Toe (Gaming Application)
+
+Developed this application in React and Typescript.  
+
+
+## Installation
+
+Install app with npm
+
+```bash
+  npm install 
+```
+
+Run app
+
+```bash
+  npm start 
+```
+## Tech Stack
+
+React
+Typescript
+
+
+
+## Screenshots
+
+![Welcome Page](https://github.com/nikhilkalamdane/Tic-Tac-Toe/blob/main/src/assets/welcome_page.png)
+
