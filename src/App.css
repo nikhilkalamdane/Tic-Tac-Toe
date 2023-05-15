@@ -1,38 +1,135 @@
-.App {
+.button {
+  background: linear-gradient(135deg, #c70039, #ff5733);
+  border: 2px solid #c70039;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 2rem;
+  padding: 10px 25px;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #c70039;
+  box-shadow: 0px 0px 15px 0px rgba(199, 0, 57, 0.75);
+  cursor: pointer;
+}
+
+.welcome-page {
+  margin-top: 5rem;
+}
+
+.welcome-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+.title {
+  font-size: 3rem;
+  margin-right: 2rem;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5rem;
+  padding: 1rem;
+
+  /* border: 1px solid; */
+}
+
+.board-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  width: max-content;
+}
+
+.square {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #0e86d4;
+  /* border-radius: 25%; */
+}
+
+#square_0,
+#square_1,
+#square_2 {
+  border-top: none;
+}
+
+#square_0,
+#square_3,
+#square_6 {
+  border-left: none;
+}
+
+#square_6,
+#square_7,
+#square_8 {
+  border-bottom: none;
+}
+
+#square_2,
+#square_5,
+#square_8 {
+  border-right: none;
+}
+
+.square-text {
+  font-size: 6rem;
+  font-weight: bolder;
+  color: #ff3f00;
+  -webkit-text-stroke: 0.01px black;
+}
+
+.message {
+  font-size: 2rem;
+}
+
+#popup-button {
+  font-size: 1.4rem;
+  padding: 5px 15px;
+}
+
+.text-effect {
+  font-size: 2rem;
+  color: #000000;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 9px rgba(171, 166, 166, 0.73);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.blink {
+  animation: blinker 1s step-start infinite;
+  color: #055c9d;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes blinker {
+  50% {
+    opacity: 0.3;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#home-button {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+}
+
+#reset-button {
+  position: absolute;
+  top: 30px;
+  right: 150px;
+}
+
+.menu {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
