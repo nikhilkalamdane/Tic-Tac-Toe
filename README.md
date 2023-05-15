@@ -1,25 +1,50 @@
-# Tic Tac Toe (Gaming Application)
+# Tic Tac Toe Game
 
-Developed this application in React and Typescript.
+This is a simple Tic Tac Toe game built using React and TypeScript. It allows two players to take turns marking 'X' and 'O' on a 3 x 3 grid until a player wins or the game ends in a draw.
+
+## Features
+
+- Player Details: Enter the names of both players before starting the game.
+- Win Detection: The game automatically detects when a player wins and displays a winner popup.
+- Draw Detection: If all cells are filled and no player wins, a draw popup is displayed.
+- Reset: Players can reset the game to start a new round only after win or draw the game.
 
 ## Installation
 
-Install app with npm
+1. Clone the repository:
 
 ```bash
-  npm install
+git Clone: https://github.com/nikhilkalamdane/Tic-Tac-Toe.git
 ```
 
-Run app
+2. Navigate to the project directory:
 
 ```bash
-  npm start
+cd tic-tac-toe-game
 ```
 
-## Tech Stack
+3. Install the dependencies:
 
-React  
-Typescript
+```bash
+npm install
+```
+
+4. Start the development server:
+
+```bash
+npm start
+```
+
+5. Open your browser and visit [http://localhost:3000](http://localhost:3000) to play the Tic Tac Toe game.
+
+## Dependencies
+
+The project uses the following dependencies:
+
+- React: JavaScript library for building user interfaces.
+- react-router-dom: Routing library for React applications.
+- react-bootstrap: UI library for React applications.
+- TypeScript: Typed superset of JavaScript.
 
 ## Screenshots
 
@@ -29,7 +54,7 @@ Typescript
 
 2. Enter player details
 
-![Player Details Page](https://github.com/nikhilkalamdane/Tic-Tac-Toe/blob/main/src/assets/screenshot-2.png)
+![Player Details](https://github.com/nikhilkalamdane/Tic-Tac-Toe/blob/main/src/assets/screenshot-2.png)
 
 3. Actual board game for tic tac Toe
 
