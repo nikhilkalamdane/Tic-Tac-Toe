@@ -50,9 +50,6 @@ const MainGamePage: React.FC = () => {
             >
               <img src={HomeImg} alt="Home" style={{ width: "40px" }} />
             </button>
-            {/* <button className="button" id="reset-button">
-          <img src={ResetImg} alt="Reset" style={{ width: "40px" }} />
-        </button> */}
           </div>
         </Row>
         <Row style={{ marginTop: "100px" }}>

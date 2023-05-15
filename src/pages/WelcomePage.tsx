@@ -7,7 +7,7 @@ const WelcomePage: React.FC = () => {
   return (
     <div className="welcome-page">
       <div className="welcome-title">
-        <h1 className="title">Click here for fun</h1>
+        <h1 className="title">Click here for fun !!!</h1>
         <button className="button" onClick={() => navigate("/main-game")}>
           Start
         </button>

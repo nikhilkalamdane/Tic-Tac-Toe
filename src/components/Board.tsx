@@ -39,7 +39,7 @@ const Board: React.FC<BoardProps> = (props: any) => {
 
   /**
    * There are total 8 combination by which player can won the game.
-   * So here I have write a logic like the player who first complete condition satisfied that player will win.
+   * The player who first complete condition satisfied that player will win.
    * If any player won then dialog box for winning display and if match get draw then dialog box for draw dsiplay.
    * @returns String
    */

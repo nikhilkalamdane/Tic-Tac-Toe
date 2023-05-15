@@ -28,6 +28,11 @@ const PlayerDetails = (props: any) => {
   const [Player1, setPlayer1] = useState<string>("");
   const [Player2, setPlayer2] = useState<string>("");
 
+  const handleNext = () => {
+    getPlayerName(Player1, Player2);
+    setShow(false);
+  };
+
   const handleClose = () => {
     setShow(false);
     navigate("/");
@@ -36,40 +41,32 @@ const PlayerDetails = (props: any) => {
   return (
     <Modal show={show}>
       <Modal.Header>
-        <Modal.Title>Enter Player Details </Modal.Title>
+        <Modal.Title>
+          <h1>Enter Player Details </h1>
+        </Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-        <div>
-          <h4>Player 1 (X): </h4>
-          <input
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setPlayer1(e.target.value)
-            }
-          />
-        </div>
+      <Modal.Body id="modal-body">
+        <h3>Player 1 (X): </h3>
+        <input
+          maxLength={12}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            setPlayer1(e.target.value)
+          }
+        />
 
-        <div>
-          <h4>Player 2 (0): </h4>
-          <input
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setPlayer2(e.target.value)
-            }
-            required
-          />
-        </div>
+        <h3>Player 2 (0): </h3>
+        <input
+          maxLength={20}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            setPlayer2(e.target.value)
+          }
+        />
       </Modal.Body>
       <Modal.Footer>
         <button className="button" id="popup-button" onClick={handleClose}>
           Back
         </button>
-        <button
-          className="button"
-          id="popup-button"
-          onClick={() => {
-            getPlayerName(Player1, Player2);
-            setShow(false);
-          }}
-        >
+        <button className="button" id="popup-button" onClick={handleNext}>
           Next
         </button>
       </Modal.Footer>
