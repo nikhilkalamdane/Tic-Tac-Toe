@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 
 /**
- * DrawPopup is a dialog box which display after game is draw.
- * It accept 2 props as below:
+ * DrawPopup is a dialog box which displays after game ends in draw.
+ * It accepts 2 props as below:
  * isDraw - boolean value which sets to true only if game is draw
  * handleReset - a callback function to reset values
  */

@@ -2,7 +2,7 @@ import React from "react";
 
 /**
  * DisplayPlayer shows name of both player while playing game
- * isXTurn - It is true if there is turn for 'X' else false. Text "Your Turn" will blink for that player which is going to play.
+ * isXTurn - It's true for 'X' and false for 'O'. Text "Your Turn" will blink for that player which is going to play.
  * playerName - respective player name
  */
 

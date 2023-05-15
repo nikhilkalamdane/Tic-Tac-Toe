@@ -4,8 +4,8 @@ import { Context } from "../context/Context";
 import Modal from "react-bootstrap/Modal";
 
 /**
- * WinnerPopup is a dialog box which display after any player won the game with winner name.
- * It accept 2 props as below:
+ * WinnerPopup is a dialog box which displays after a player wins the game.
+ * It accepts 2 props as below:
  * wonTheGame - boolean value which sets to true only if any player won the game
  * handleReset - a callback function to reset values
  */

@@ -4,9 +4,9 @@ import WinnerPopup from "./WinnerPopup";
 import DrawPopup from "./DrawPopup";
 
 /**
- * Board is component which contain grid of 9 cells and contain main logic of game.
+ * Board is component which contains grid of 9 cells [3 X 3]
  * It accepts 3 props as below :
- * isXTurn - It is true if there is turn for 'X' else false.
+ * isXTurn - It's true for 'X' and false for 'O'.
  * setIsXTurn - A callback function for changing player turn
  * playerWins - A callback function to set winner symbol [X or 0]
  */
@@ -33,14 +33,14 @@ const Board: React.FC<BoardProps> = (props: any) => {
     playerWins: (data: string) => string;
   } = props;
 
-  //Created string array for 9 elements and initialize it with null
+  //Created string array for 9 elements and initialized it with null
   const [cellValues, setCellValues] = useState<string[]>(Array(9).fill(null));
   const [isDraw, setIsDraw] = useState(false);
 
   /**
-   * There are total 8 combination by which player can won the game.
-   * The player who first complete condition satisfied that player will win.
-   * If any player won then dialog box for winning display and if match get draw then dialog box for draw dsiplay.
+   * There are total 8 combinations by which a player can win the game.
+   * The first player who completes winning condition will win.
+   * If a player wins then dialog box for winning displays and if match ends in draw then dialog box for draw is displayed.
    * @returns String
    */
   const checkWinner = (): string => {
@@ -72,7 +72,7 @@ const Board: React.FC<BoardProps> = (props: any) => {
   };
 
   /**
-   * A function which takes selected cell index and set it to respective 'X' or '0'.
+   * A function which takes selected cell index and sets it to respective 'X' or '0'.
    * If array does not contain null value then it is draw.
    * @param index
    * @returns void

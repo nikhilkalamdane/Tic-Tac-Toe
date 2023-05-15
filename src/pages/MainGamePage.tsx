@@ -23,13 +23,13 @@ const MainGamePage: React.FC = () => {
 
   const navigate = useNavigate();
 
-  //Set player name with given value if provided or set default value
+  //Set player names and if nothing entered carry forwards default value
   const setPlayerName = (p1: string, p2: string) => {
     setPlayer1(p1 ? p1 : "Player 1");
     setPlayer2(p2 ? p2 : "Player 2");
   };
 
-  //Set winner player name who won the game
+  //Set the player name who won the game
   const handlePlayerWins = (data: string) => {
     if (data == "x") {
       setWinnerName(Player1);
