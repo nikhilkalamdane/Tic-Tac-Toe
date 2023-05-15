@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { Context } from "../context/Context";
+import Context from "../context/Context";
 import Modal from "react-bootstrap/Modal";
 
 /**
@@ -10,13 +10,9 @@ import Modal from "react-bootstrap/Modal";
  * handleReset - a callback function to reset values
  */
 
-interface WinnerPopupState {
-  show: boolean;
-}
-
 interface WinnerPopupProps {
   wonTheGame: boolean;
-  handleReset: React.Dispatch<React.SetStateAction<void>>;
+  handleReset: () => void;
 }
 
 const WinnerPopup: React.FC<WinnerPopupProps> = ({
@@ -43,11 +39,7 @@ const WinnerPopup: React.FC<WinnerPopupProps> = ({
         <button className="button" id="popup-button" onClick={handleClose}>
           Close
         </button>
-        <button
-          className="button"
-          id="popup-button"
-          onClick={() => handleReset()}
-        >
+        <button className="button" id="popup-button" onClick={handleReset}>
           Play again
         </button>
       </Modal.Footer>

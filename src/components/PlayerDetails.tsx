@@ -7,29 +7,19 @@ import { useNavigate } from "react-router-dom";
  * getPlayerName - a callback function which sends name of both playes to its parent [MainGamePage.tsx]
  */
 
-interface PlayerDetailsState {
-  show: boolean;
-  Player1: string;
-  Player2: string;
-}
-
 interface PlayerDetailsProps {
-  getPlayerName: () => string;
+  getPlayerName: (player1: string, player2: string) => void;
 }
 
-const PlayerDetails = (props: any) => {
+const PlayerDetails: React.FC<PlayerDetailsProps> = ({ getPlayerName }) => {
   const navigate = useNavigate();
 
-  const {
-    getPlayerName,
-  }: { getPlayerName: (p1: string, p2: string) => string } = props;
-
-  const [show, setShow] = useState<boolean>(true);
-  const [Player1, setPlayer1] = useState<string>("");
-  const [Player2, setPlayer2] = useState<string>("");
+  const [show, setShow] = useState(true);
+  const [player1, setPlayer1] = useState("");
+  const [player2, setPlayer2] = useState("");
 
   const handleNext = () => {
-    getPlayerName(Player1, Player2);
+    getPlayerName(player1, player2);
     setShow(false);
   };
 
@@ -39,7 +29,7 @@ const PlayerDetails = (props: any) => {
   };
 
   return (
-    <Modal show={show}>
+    <Modal centered show={show}>
       <Modal.Header>
         <Modal.Title>
           <h1>Enter Player Details </h1>
@@ -56,7 +46,7 @@ const PlayerDetails = (props: any) => {
 
         <h3>Player 2 (0): </h3>
         <input
-          maxLength={20}
+          maxLength={12}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setPlayer2(e.target.value)
           }

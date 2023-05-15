@@ -18,7 +18,7 @@ const DisplayPlayer: React.FC<DisplayPlayerProps> = ({
   return (
     <div>
       <h5 className="text-effect">{playerName}</h5>
-      {isXTurn ? <h3 className="blink">Your turn</h3> : ""}
+      {isXTurn && <h3 className="blink">Your turn</h3>}
     </div>
   );
 };

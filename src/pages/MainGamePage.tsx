@@ -1,40 +1,33 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
-import { Context } from "../context/Context";
+import Context from "../context/Context";
 import DisplayPlayer from "../components/DisplayPlayer";
 import Board from "../components/Board";
 import PlayerDetails from "../components/PlayerDetails";
 import HomeImg from "../assets/Home.png";
 import CartoonImg from "../assets/cartoon.png";
 
-interface MainGameState {
-  isXTurn: boolean;
-  Player1: string;
-  Player2: string;
-  winnerName: string;
-}
-
 const MainGamePage: React.FC = () => {
   const [isXTurn, setIsXTurn] = useState<boolean>(true);
-  const [Player1, setPlayer1] = useState<string>("");
-  const [Player2, setPlayer2] = useState<string>("");
+  const [player1, setPlayer1] = useState<string>("");
+  const [player2, setPlayer2] = useState<string>("");
   const [winnerName, setWinnerName] = useState<string>("");
 
   const navigate = useNavigate();
 
   //Set player names and if nothing entered carry forwards default value
-  const setPlayerName = (p1: string, p2: string) => {
+  const setPlayerName = (p1: string, p2: string): void => {
     setPlayer1(p1 ? p1 : "Player 1");
     setPlayer2(p2 ? p2 : "Player 2");
   };
 
   //Set the player name who won the game
   const handlePlayerWins = (data: string) => {
-    if (data == "x") {
-      setWinnerName(Player1);
+    if (data === "x") {
+      setWinnerName(player1);
     } else {
-      setWinnerName(Player2);
+      setWinnerName(player2);
     }
   };
 
@@ -54,7 +47,7 @@ const MainGamePage: React.FC = () => {
         </Row>
         <Row style={{ marginTop: "100px" }}>
           <Col md={5}>
-            <img src={CartoonImg} alt="Cartoon" />
+            <img src={CartoonImg} alt="Cartoon" className="cartoon-img" />
           </Col>
           <Col>
             <Context.Provider value={winnerName}>
@@ -62,7 +55,7 @@ const MainGamePage: React.FC = () => {
                 <PlayerDetails getPlayerName={setPlayerName} />
                 <Row>
                   <Col md={3}>
-                    <DisplayPlayer isXTurn={isXTurn} playerName={Player1} />
+                    <DisplayPlayer isXTurn={isXTurn} playerName={player1} />
                   </Col>
                   <Col>
                     <Board
@@ -72,7 +65,7 @@ const MainGamePage: React.FC = () => {
                     />
                   </Col>
                   <Col md={3}>
-                    <DisplayPlayer isXTurn={!isXTurn} playerName={Player2} />
+                    <DisplayPlayer isXTurn={!isXTurn} playerName={player2} />
                   </Col>
                 </Row>
               </Container>

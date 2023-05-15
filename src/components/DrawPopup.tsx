@@ -9,13 +9,9 @@ import Modal from "react-bootstrap/Modal";
  * handleReset - a callback function to reset values
  */
 
-interface DrawPopupState {
-  show: boolean;
-}
-
 interface DrawPopupProps {
   isDraw: boolean;
-  handleReset: React.Dispatch<React.SetStateAction<void>>;
+  handleReset: () => void;
 }
 
 const DrawPopup: React.FC<DrawPopupProps> = ({ isDraw, handleReset }) => {
@@ -35,11 +31,7 @@ const DrawPopup: React.FC<DrawPopupProps> = ({ isDraw, handleReset }) => {
         <button className="button" id="popup-button" onClick={handleClose}>
           Close
         </button>
-        <button
-          className="button"
-          id="popup-button"
-          onClick={() => handleReset()}
-        >
+        <button className="button" id="popup-button" onClick={handleReset}>
           Play again
         </button>
       </Modal.Footer>

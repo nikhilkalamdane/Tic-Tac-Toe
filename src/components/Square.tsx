@@ -11,12 +11,12 @@ import React from "react";
 interface SquareProps {
   squareValue: string;
   index: number;
-  onClick: React.MouseEventHandler<HTMLDivElement>;
+  onClick: () => void;
 }
 
 const Square: React.FC<SquareProps> = ({ squareValue, index, onClick }) => {
   return (
-    <div className="square" id={`square_${index}`} onClick={onClick}>
+    <div className="square" onClick={onClick}>
       <h5 className="square-text">{squareValue}</h5>
     </div>
   );

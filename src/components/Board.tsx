@@ -36,6 +36,16 @@ const Board: React.FC<BoardProps> = (props: any) => {
   //Created string array for 9 elements and initialized it with null
   const [cellValues, setCellValues] = useState<string[]>(Array(9).fill(null));
   const [isDraw, setIsDraw] = useState(false);
+  const winnerLogic = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
 
   /**
    * There are total 8 combinations by which a player can win the game.
@@ -44,22 +54,11 @@ const Board: React.FC<BoardProps> = (props: any) => {
    * @returns String
    */
   const checkWinner = (): string => {
-    const winnerLogic = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 4, 8],
-      [2, 4, 6],
-    ];
-
     for (let logic of winnerLogic) {
       const [a, b, c] = logic;
 
       if (
-        cellValues[a] != null &&
+        cellValues[a] !== null &&
         cellValues[a] === cellValues[b] &&
         cellValues[a] === cellValues[c]
       ) {
@@ -108,6 +107,7 @@ const Board: React.FC<BoardProps> = (props: any) => {
       {cellValues.map((ele, index) => {
         return (
           <Square
+            key={index}
             squareValue={cellValues[index]}
             onClick={() => handleClick(index)}
             index={index}
@@ -118,9 +118,7 @@ const Board: React.FC<BoardProps> = (props: any) => {
         <WinnerPopup wonTheGame={true} handleReset={handleReset} />
       ) : isDraw ? (
         <DrawPopup isDraw={isDraw} handleReset={handleReset} />
-      ) : (
-        <></>
-      )}
+      ) : null}
     </div>
   );
 };
