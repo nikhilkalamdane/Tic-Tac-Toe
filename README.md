@@ -18,7 +18,7 @@ Run app
 
 ## Tech Stack
 
-React
+React  
 Typescript
 
 ## Screenshots
