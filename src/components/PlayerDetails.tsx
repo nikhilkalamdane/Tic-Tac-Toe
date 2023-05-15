@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import { useNavigate } from "react-router-dom";
 
+/**
+ * PlayerDetails is a dialog box which takes both player names as input
+ * getPlayerName - a callback function which sends name of both playes to its parent [MainGamePage.tsx]
+ */
+
 interface PlayerDetailsState {
   show: boolean;
   Player1: string;
@@ -13,11 +18,11 @@ interface PlayerDetailsProps {
 }
 
 const PlayerDetails = (props: any) => {
+  const navigate = useNavigate();
+
   const {
     getPlayerName,
   }: { getPlayerName: (p1: string, p2: string) => string } = props;
-
-  const navigate = useNavigate();
 
   const [show, setShow] = useState<boolean>(true);
   const [Player1, setPlayer1] = useState<string>("");

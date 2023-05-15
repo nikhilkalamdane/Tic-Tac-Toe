@@ -1,12 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
+import { Context } from "../context/Context";
 import DisplayPlayer from "../components/DisplayPlayer";
 import Board from "../components/Board";
 import PlayerDetails from "../components/PlayerDetails";
-import { Context } from "../context/Context";
 import HomeImg from "../assets/Home.png";
 import CartoonImg from "../assets/cartoon.png";
-import { useNavigate } from "react-router-dom";
 
 interface MainGameState {
   isXTurn: boolean;
@@ -23,11 +23,13 @@ const MainGamePage: React.FC = () => {
 
   const navigate = useNavigate();
 
+  //Set player name with given value if provided or set default value
   const setPlayerName = (p1: string, p2: string) => {
     setPlayer1(p1 ? p1 : "Player 1");
     setPlayer2(p2 ? p2 : "Player 2");
   };
 
+  //Set winner player name who won the game
   const handlePlayerWins = (data: string) => {
     if (data == "x") {
       setWinnerName(Player1);

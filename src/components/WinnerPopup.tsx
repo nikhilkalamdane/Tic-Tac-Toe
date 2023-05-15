@@ -1,7 +1,14 @@
 import React, { useState, useContext } from "react";
-import Modal from "react-bootstrap/Modal";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../context/Context";
+import Modal from "react-bootstrap/Modal";
+
+/**
+ * WinnerPopup is a dialog box which display after any player won the game with winner name.
+ * It accept 2 props as below:
+ * wonTheGame - boolean value which sets to true only if any player won the game
+ * handleReset - a callback function to reset values
+ */
 
 interface WinnerPopupState {
   show: boolean;
@@ -20,6 +27,7 @@ const WinnerPopup: React.FC<WinnerPopupProps> = ({
   const [show, setShow] = useState(wonTheGame);
   const winningPlayerName = useContext(Context);
 
+  // To close dialog box
   const handleClose = () => {
     setShow(false);
     navigate("/");

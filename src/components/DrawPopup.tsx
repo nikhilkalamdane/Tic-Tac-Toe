@@ -1,6 +1,13 @@
 import React, { useState } from "react";
-import Modal from "react-bootstrap/Modal";
 import { useNavigate } from "react-router-dom";
+import Modal from "react-bootstrap/Modal";
+
+/**
+ * DrawPopup is a dialog box which display after game is draw.
+ * It accept 2 props as below:
+ * isDraw - boolean value which sets to true only if game is draw
+ * handleReset - a callback function to reset values
+ */
 
 interface DrawPopupState {
   show: boolean;
@@ -15,6 +22,7 @@ const DrawPopup: React.FC<DrawPopupProps> = ({ isDraw, handleReset }) => {
   const navigate = useNavigate();
   const [show, setShow] = useState(isDraw);
 
+  // To close dialog box
   const handleClose = () => {
     setShow(false);
     navigate("/");
